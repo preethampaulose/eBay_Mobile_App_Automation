@@ -7,7 +7,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.accenture.util.Settings;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -50,7 +49,7 @@ public class Android {
     }
 
     public void quit() {
-	this.driver.quit();
+	Android.driver.quit();
 	
     }
 
