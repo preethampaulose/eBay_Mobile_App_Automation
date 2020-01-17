@@ -19,16 +19,16 @@ public class ProductSearchScreen extends BaseScreen{
 
     @AndroidFindBy(id = "com.ebay.mobile:id/search_box")
     private MobileElement searchBox;
-    
+
     @AndroidFindBy(id = "com.ebay.mobile:id/search_src_text")
     private MobileElement searchTextBox;
 
-    
+
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc="
-    			+ "'When you save a search, we'll let you know when a new item is listed double tap to dismiss']")
+	    			+ "'When you save a search, we'll let you know when a new item is listed double tap to dismiss']")
     private MobileElement saveASearch;
-  
-    
+
+
     @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@resource-id='com.ebay.mobile:id/cell_collection_item'][1]")
     private MobileElement listing;
 
@@ -39,15 +39,17 @@ public class ProductSearchScreen extends BaseScreen{
 	if (!textEnteredSuccessfully)
 	    System.out.println("Could not enter text " + itemToSearch + " in the search box");
 	Android.driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	if(fieldIsDisplayed(saveASearch))
+	    saveASearch.click();
     }
 
 
     public void selectRandomItem() {
 	Random r = new Random();
-	for(int i=0; i < r.nextInt((7 - 0) + 1) + 0; i++)
+	for(int i=0; i < r.nextInt((5 - 0) + 1) + 0; i++)
 	    swipeup();
 	listing.click();
     }
 
-    
+
 }

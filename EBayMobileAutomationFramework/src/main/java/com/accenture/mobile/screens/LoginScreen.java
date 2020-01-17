@@ -18,13 +18,13 @@ public class LoginScreen extends BaseScreen{
     @AndroidFindBy(id = "com.ebay.mobile:id/button_classic")
     private MobileElement USE_EMAIL_OR_USERNAME;
 
-    @AndroidFindBy(id = "//android.widget.EditText[@text='Email or username']")
+    @AndroidFindBy(id = "com.ebay.mobile:id/edit_text_username")
     private MobileElement userNameField;
 
-    @AndroidFindBy(id = "//android.widget.EditText[@text='Password']")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text='Password']")
     private MobileElement passwordField;
 
-    @AndroidFindBy(id = "//android.widget.Button[@text='Sign in']")
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='SIGN IN']")
     private MobileElement signIn;
 
     public LoginScreen(AppiumDriver<?> driver) {
@@ -32,14 +32,16 @@ public class LoginScreen extends BaseScreen{
     }
 
     public void login(String username, String password){
-	signIn.click();
-	USE_EMAIL_OR_USERNAME.click();
+	//signIn.click();
+	if(fieldIsDisplayed(USE_EMAIL_OR_USERNAME))
+	    USE_EMAIL_OR_USERNAME.click();
 	boolean textEnteredSuccessfully = enterText(username, userNameField);
 	if (!textEnteredSuccessfully)
 	    System.out.println("Could not enter username");
 	textEnteredSuccessfully = enterText(password, passwordField);
 	if (!textEnteredSuccessfully)
 	    System.out.println("Could not enter password");
-	Android.driver.pressKey(new KeyEvent(AndroidKey.ENTER)); 
+	signIn.click();
     }
+    
 }

@@ -33,7 +33,7 @@ public class ProductDetailsScreen extends BaseScreen{
     }
 
     public String getItemPrice() {
-	return price.getText();
+	return price.getText().trim();
     }
 
     public void buy() {

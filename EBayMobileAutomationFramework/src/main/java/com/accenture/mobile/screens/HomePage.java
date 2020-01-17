@@ -30,38 +30,25 @@ public class HomePage extends BaseScreen{
     private MobileElement searchTextBox;
 
     
-    @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc="
-    			+ "'When you save a search, we'll let you know when a new item is listed double tap to dismiss']")
-    private MobileElement saveASearch;
+    @AndroidFindBy(id = "com.ebay.mobile:id/textview_sign_in_status")
+    private MobileElement avatar;
   
     
-    @AndroidFindBy(xpath = "//android.widget.RelativeLayout[@resource-id='com.ebay.mobile:id/cell_collection_item'][1]")
-    private MobileElement listing;
-
-
-    public void searchFor(String itemToSearch) {
-	searchBox.click();
-	boolean textEnteredSuccessfully = enterText(itemToSearch, searchTextBox);
-	if (!textEnteredSuccessfully)
-	    System.out.println("Could not enter text " + itemToSearch + " in the search box");
-	Android.driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-    }
-
-
-    public void selectRandomItem() {
-	Random r = new Random();
-	for(int i=0; i < r.nextInt((7 - 0) + 1) + 0; i++)
-	    swipeup();
-	listing.click();
-    }
+    @AndroidFindBy(id = "com.ebay.mobile:id/menuitem_sign_out")
+    private MobileElement signOut;
 
 
     public void signIn(String userName, String password) {
 	navigationMenu.click();
 	signIn.click();
-	
 	LoginScreen loginScreen = new LoginScreen(Android.driver);
 	loginScreen.login(userName, password);
+    }
+    
+    public void logOut() {
+	navigationMenu.click();
+	avatar.click();
+	signOut.click();
     }
 
     
