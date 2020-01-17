@@ -49,4 +49,14 @@ public abstract class BaseScreen {
                     .release()
                     .perform();
     }
+    
+    protected boolean fieldIsDisplayed(MobileElement element) {
+   	try{
+   	 element.isDisplayed();
+   	}
+   	catch(Exception e) {
+   	    return false;
+   	}
+   	return true;
+       }
 }

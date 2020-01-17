@@ -19,7 +19,6 @@ public class Dataset {
 	Object[][] objects = new Object [size()] [1];
 	for(int i=0; i<size(); i++)
 	    objects[i][0] = this.dataset.get(i).toString();
-	Object[][] test = new Object[][] { { "data one" }, { "data two" } };
 	return objects;
     }
 

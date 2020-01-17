@@ -1,29 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="1" ignored="2" total="6" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29775" started-at="2020-01-16T07:31:45 EST" finished-at="2020-01-16T07:32:15 EST">
+  <suite name="Default suite" duration-ms="137985" started-at="2020-01-17T11:36:33 EST" finished-at="2020-01-17T11:38:51 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29775" started-at="2020-01-16T07:31:45 EST" finished-at="2020-01-16T07:32:15 EST">
+    <test name="Default test" duration-ms="137985" started-at="2020-01-17T11:36:33 EST" finished-at="2020-01-17T11:38:51 EST">
       <class name="com.accenture.tests.TestSearchAndValidate">
-        <test-method status="PASS" signature="setUpAppium()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@15b6aac]" name="setUpAppium" is-config="true" duration-ms="17323" started-at="2020-01-16T07:31:28 EST" finished-at="2020-01-16T07:31:45 EST">
+        <test-method status="PASS" signature="setUpAppium()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="setUpAppium" is-config="true" duration-ms="25082" started-at="2020-01-17T11:36:08 EST" finished-at="2020-01-17T11:36:33 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpAppium -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@15b6aac]" name="setUpClass" is-config="true" duration-ms="404" started-at="2020-01-16T07:31:45 EST" finished-at="2020-01-16T07:31:46 EST">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="setUpClass" is-config="true" duration-ms="295" started-at="2020-01-17T11:36:33 EST" finished-at="2020-01-17T11:36:33 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="testSearch()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@15b6aac]" name="testSearch" duration-ms="29216" started-at="2020-01-16T07:31:46 EST" finished-at="2020-01-16T07:32:15 EST">
+        <test-method status="PASS" signature="searchForItem(java.lang.String)[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="searchForItem" duration-ms="21701" started-at="2020-01-17T11:36:34 EST" data-provider="data-provider" finished-at="2020-01-17T11:36:56 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[New TV]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearch -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@15b6aac]" name="tearDownClass" is-config="true" duration-ms="22" started-at="2020-01-16T07:32:15 EST" finished-at="2020-01-16T07:32:15 EST">
+        </test-method> <!-- searchForItem -->
+        <test-method status="PASS" signature="searchForItem(java.lang.String)[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="searchForItem" duration-ms="23688" started-at="2020-01-17T11:36:56 EST" data-provider="data-provider" finished-at="2020-01-17T11:37:19 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Microwave]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForItem -->
+        <test-method status="FAIL" signature="searchForItem(java.lang.String)[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="searchForItem" duration-ms="35122" started-at="2020-01-17T11:37:19 EST" data-provider="data-provider" finished-at="2020-01-17T11:37:55 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Air Conditioner]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Can't locate an element by this strategy: By.chained({By.id: com.ebay.mobile:id/search_box})]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.id: com.ebay.mobile:id/search_box})
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(<generated>)
+at com.accenture.mobile.screens.ProductSearchScreen.searchFor(ProductSearchScreen.java:37)
+at com.accenture.tests.TestSearchAndValidate.searchForItem(TestSearchAndValidate.java:39)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.TestRunner$$Lambda$240/517110.accept(Unknown Source)
+at java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@f143ed (tried for 1 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+... 33 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.ebay.mobile:id/search_box})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'TOM', ip: '192.168.143.2', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_51'
+Driver info: driver.version: AndroidDriver
+at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+at io.appium.java_client.pagefactory.AppiumElementLocator$$Lambda$254/9971980.get(Unknown Source)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 35 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForItem -->
+        <test-method status="PASS" signature="searchForItem(java.lang.String)[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="searchForItem" duration-ms="56038" started-at="2020-01-17T11:37:55 EST" data-provider="data-provider" finished-at="2020-01-17T11:38:51 EST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Queen Bed]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForItem -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="tearDownClass" is-config="true" duration-ms="1" started-at="2020-01-17T11:38:51 EST" finished-at="2020-01-17T11:38:51 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method status="PASS" signature="tearDownAppium()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@15b6aac]" name="tearDownAppium" is-config="true" duration-ms="1733" started-at="2020-01-16T07:32:16 EST" finished-at="2020-01-16T07:32:17 EST">
+        <test-method status="PASS" signature="tearDownAppium()[pri:0, instance:com.accenture.tests.TestSearchAndValidate@1b64261]" name="tearDownAppium" is-config="true" duration-ms="2959" started-at="2020-01-17T11:38:51 EST" finished-at="2020-01-17T11:38:54 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownAppium -->

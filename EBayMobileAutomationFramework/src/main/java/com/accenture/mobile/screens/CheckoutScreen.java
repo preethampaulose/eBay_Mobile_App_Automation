@@ -28,13 +28,20 @@ public class CheckoutScreen extends BaseScreen{
     }
 
     public String getItemPrice() {
-	return price.getText();
+	return price.getText().trim();
     }
 
     public void goToHome() {
-	close.click();
+	try {
 	Android.driver.pressKey(new KeyEvent(AndroidKey.BACK));
-	
+	Thread.sleep(1000);
+	Android.driver.pressKey(new KeyEvent(AndroidKey.BACK));
+	Thread.sleep(1000);
+	Android.driver.pressKey(new KeyEvent(AndroidKey.BACK));
+	}
+	catch (Exception e) {
+	    System.out.println(e.getMessage());
+	}
     }
 
 }
