@@ -11,14 +11,16 @@ import com.accenture.mobile.screens.LoginScreen;
 import com.accenture.mobile.screens.ProductDetailsScreen;
 import com.accenture.mobile.screens.ProductSearchScreen;
 import com.accenture.mobile.screens.ShoppingCartScreen;
+import com.accenture.util.Settings;
 
 public class TestSearchAndValidate extends BaseTest{
 
     
     @Test()
     public void login() {
+	Settings settings = new Settings("src/test/resources/setting.properties");
 	HomePage homePage = new HomePage(Android.driver);
-	homePage.signIn("rinjupoovely@gmail.com", "electr0n");
+	homePage.signIn(settings.getUserName(), settings.getPassword());
     }
 
     @Test()
