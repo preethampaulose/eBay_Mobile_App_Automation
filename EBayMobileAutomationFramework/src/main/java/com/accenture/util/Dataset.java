@@ -1,11 +1,18 @@
 package com.accenture.util;
 
+import java.util.ArrayList;
+
 public class Dataset {
 
-    private String fileName;
+    private ArrayList<String> dataset = new ArrayList<>();
 
-    public Dataset(String fileName) {
-	this.fileName = fileName;
+    public void add(String value) {
+	this.dataset .add(value);
+	
+    }
+
+    public int size() {
+	return this.dataset.size();
     }
 
 }
