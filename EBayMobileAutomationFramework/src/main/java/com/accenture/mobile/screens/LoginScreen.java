@@ -6,10 +6,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class LoginScreen extends BaseScreen{
 
-    /*
-     * @AndroidFindBy(id = "com.ebay.mobile:id/button_sign_in") private
-     * MobileElement signIn;
-     */
 
     @AndroidFindBy(id = "com.ebay.mobile:id/button_classic")
     private MobileElement USE_EMAIL_OR_USERNAME;
@@ -28,7 +24,6 @@ public class LoginScreen extends BaseScreen{
     }
 
     public void login(String username, String password){
-	//signIn.click();
 	if(fieldIsDisplayed(USE_EMAIL_OR_USERNAME))
 	    USE_EMAIL_OR_USERNAME.click();
 	boolean textEnteredSuccessfully = enterText(username, userNameField);
