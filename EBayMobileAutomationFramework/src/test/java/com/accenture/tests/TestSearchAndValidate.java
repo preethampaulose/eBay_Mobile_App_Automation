@@ -16,27 +16,28 @@ import com.accenture.util.Settings;
 
 public class TestSearchAndValidate extends BaseTest{
 
-
-    @DataProvider(name = "data-provider") 
+    //Read the TestData file for the items to search
+    @DataProvider(name = "item-to-search") 
     public Object[][] dataProviderMethod(){
-	DatasetFile datasetFile = new DatasetFile("src/test/resources/TestData.xlsx");
+	DatasetFile datasetFile = new DatasetFile("TestData.xlsx");
 	Dataset dataset = datasetFile.read();
 	return dataset.getObjectData();
     }
 
-
+    //Perform the login
     @Test()
     public void login() {
-	Settings settings = new Settings("src/test/resources/setting.properties");
+	Settings settings = new Settings("setting.properties");
 	HomePage homePage = new HomePage(Android.driver);
 	homePage.signIn(settings.getUserName(), settings.getPassword());
     }
     
-
-    @Test(dataProvider = "data-provider")
-    public void searchForItem(String data) {
+    //Search for each item in the TestData
+    //Buy the item and verify the item details in checkout
+    @Test(dataProvider = "item-to-search")
+    public void searchForItem(String searchItem) {
 	ProductSearchScreen searchScreen = new ProductSearchScreen(Android.driver);
-	searchScreen.searchFor(data);
+	searchScreen.searchFor(searchItem);
 	searchScreen.selectRandomItem();
 
 	ProductDetailsScreen productDetailsScreen = new ProductDetailsScreen(Android.driver);
@@ -52,7 +53,7 @@ public class TestSearchAndValidate extends BaseTest{
 	checkoutScreen.goToHome();
 
 	assertEquals(itemName, itemNameInCheckout);
-	//assertEquals(itemPrice, itemPriceInCheckout);
+	assertEquals(itemPrice, itemPriceInCheckout);
 
     }
 }
