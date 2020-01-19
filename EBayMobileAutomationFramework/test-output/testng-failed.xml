@@ -5,10 +5,10 @@
     <classes>
       <class name="com.accenture.tests.TestSearchAndValidate">
         <methods>
+          <include name="searchForItem" invocation-numbers="2"/>
           <include name="setUpAppium"/>
           <include name="tearDownClass"/>
           <include name="tearDownAppium"/>
-          <include name="testSearch"/>
           <include name="setUpClass"/>
         </methods>
       </class> <!-- com.accenture.tests.TestSearchAndValidate -->

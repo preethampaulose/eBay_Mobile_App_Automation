@@ -38,4 +38,12 @@ public class Settings extends PropertiesFile{
 	return this.getValueOf("PlatformVersion");
     }
 
+    public String getUserName() {
+	return this.getValueOf("UserName");
+    }
+
+    public String getPassword() {
+	return this.getValueOf("Password");
+    }
+
 }
