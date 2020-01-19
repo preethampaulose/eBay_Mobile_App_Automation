@@ -17,7 +17,7 @@ import com.accenture.util.Settings;
 public class TestSearchAndValidate extends BaseTest{
 
 
-    @DataProvider(name = "data-provider") 
+    @DataProvider(name = "item-to-search") 
     public Object[][] dataProviderMethod(){
 	DatasetFile datasetFile = new DatasetFile("src/test/resources/TestData.xlsx");
 	Dataset dataset = datasetFile.read();
@@ -33,10 +33,10 @@ public class TestSearchAndValidate extends BaseTest{
     }
     
 
-    @Test(dataProvider = "data-provider")
-    public void searchForItem(String data) {
+    @Test(dataProvider = "item-to-search")
+    public void searchForItem(String searchItem) {
 	ProductSearchScreen searchScreen = new ProductSearchScreen(Android.driver);
-	searchScreen.searchFor(data);
+	searchScreen.searchFor(searchItem);
 	searchScreen.selectRandomItem();
 
 	ProductDetailsScreen productDetailsScreen = new ProductDetailsScreen(Android.driver);
