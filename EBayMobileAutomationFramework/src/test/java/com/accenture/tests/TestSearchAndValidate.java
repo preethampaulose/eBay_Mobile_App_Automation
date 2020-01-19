@@ -24,7 +24,6 @@ public class TestSearchAndValidate extends BaseTest{
 	return dataset.getObjectData();
     }
 
-
     @Test()
     public void login() {
 	Settings settings = new Settings("src/test/resources/setting.properties");
