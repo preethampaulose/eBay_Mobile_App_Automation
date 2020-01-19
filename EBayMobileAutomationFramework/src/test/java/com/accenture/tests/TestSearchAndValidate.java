@@ -19,7 +19,7 @@ public class TestSearchAndValidate extends BaseTest{
     //Read the TestData file for the items to search
     @DataProvider(name = "item-to-search") 
     public Object[][] dataProviderMethod(){
-	DatasetFile datasetFile = new DatasetFile("src/test/resources/TestData.xlsx");
+	DatasetFile datasetFile = new DatasetFile("TestData.xlsx");
 	Dataset dataset = datasetFile.read();
 	return dataset.getObjectData();
     }
@@ -27,7 +27,7 @@ public class TestSearchAndValidate extends BaseTest{
     //Perform the login
     @Test()
     public void login() {
-	Settings settings = new Settings("src/test/resources/setting.properties");
+	Settings settings = new Settings("setting.properties");
 	HomePage homePage = new HomePage(Android.driver);
 	homePage.signIn(settings.getUserName(), settings.getPassword());
     }
